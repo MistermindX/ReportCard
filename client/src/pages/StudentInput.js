@@ -4,7 +4,11 @@ import StudentList from '../components/StudentList'
 function StudentInput(props) {
   return (
     <div>
-      <StudentList {...props} enterSite={props.setStudentList} />
+      <StudentList
+        {...props}
+        studentList={props.studentList}
+        enterSite={props.setStudentList}
+      />
     </div>
   )
 }

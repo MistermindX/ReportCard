@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function StudentList(props) {
+  let navigate = useNavigate()
   const Student = function (
     firstName,
     lastName,
@@ -71,9 +73,8 @@ function StudentList(props) {
         firstsAndLasts[i][1]
       )
     }
-    console.log(arrayOfStudentObjects)
     props.setStudentList(arrayOfStudentObjects)
-    // props.history.push('/main')
+    navigate('/scores')
   }
 
   return (
