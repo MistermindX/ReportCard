@@ -6,7 +6,10 @@ function ScoresInput(props) {
 
   return (
     <div>
-      <ScoresList studentList={props.studentList} />
+      <ScoresList
+        studentList={props.studentList}
+        paramsList={props.paramsList}
+      />
     </div>
   )
 }

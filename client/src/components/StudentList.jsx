@@ -24,7 +24,7 @@ function StudentList(props) {
     focus,
     askQuestions,
     turnInWork,
-    intellegence,
+    intelligence,
     distraction,
     selfStarter,
     perseverence,
@@ -49,7 +49,7 @@ function StudentList(props) {
     this.focus = focus
     this.askQuestions = askQuestions
     this.turnInWork = turnInWork
-    this.intellegence = intellegence
+    this.intelligence = intelligence
     this.distraction = distraction
     this.selfStarter = selfStarter
     this.perseverence = perseverence
