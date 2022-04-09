@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ScoresList from '../components/ScoresList'
 
 function ScoresInput(props) {
-  useEffect(() => {})
-
   return (
     <div>
       <ScoresList

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ScoresList(props) {
+  let navigate = useNavigate()
   const findResult = (i) => {
     let heshethey = 'they'
     let HeSheThey = 'They'
@@ -386,8 +388,8 @@ function ScoresList(props) {
       }
       j = 0
       findResult(i)
-      console.log(props.studentList[i].result)
     }
+    navigate('/results')
   }
 
   return (

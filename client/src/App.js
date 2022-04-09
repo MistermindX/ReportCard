@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import StudentInput from './pages/StudentInput'
 import ScoresInput from './pages/ScoresInput'
+import ResultsPage from './pages/ResultsPage'
 
 function App() {
   const [studentList, setStudentList] = useState([])
@@ -26,6 +27,10 @@ function App() {
             element={
               <ScoresInput studentList={studentList} paramsList={paramsList} />
             }
+          />
+          <Route
+            path="/results"
+            element={<ResultsPage studentList={studentList} />}
           />
         </Routes>
       </main>
