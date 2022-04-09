@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 
 function StudentList(props) {
   let navigate = useNavigate()
-  const Student = function (
-    firstName,
-    lastName,
+  const Student = function (firstName, lastName, result, id) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.result = result
+    this.id = id
+  }
+
+  const Parameters = function (
     grade,
     currentClass,
     setting,
@@ -29,11 +34,8 @@ function StudentList(props) {
     camera,
     responsivenessOnline,
     language,
-    placement,
-    result
+    placement
   ) {
-    this.firstName = firstName
-    this.lastName = lastName
     this.grade = grade
     this.currentClass = currentClass
     this.setting = setting
@@ -58,22 +60,51 @@ function StudentList(props) {
     this.responsivenessOnline = responsivenessOnline
     this.language = language
     this.placement = placement
-    this.result = result
   }
 
   const makeStudentList = (e) => {
     e.preventDefault()
     const firstsAndLasts = []
     const arrayOfStudentObjects = []
+    const arrayOfStudentParams = []
     const arrayOfStudents = e.target.listOfStudents.value.split(`, `)
     for (let i = 0; i < arrayOfStudents.length; i++) {
       firstsAndLasts[i] = arrayOfStudents[i]?.split(' ')
       arrayOfStudentObjects[i] = new Student(
         firstsAndLasts[i][0],
-        firstsAndLasts[i][1]
+        firstsAndLasts[i][1],
+        '',
+        i
+      )
+      arrayOfStudentParams[i] = new Parameters(
+        '',
+        '',
+        '',
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        '',
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       )
     }
     props.setStudentList(arrayOfStudentObjects)
+    props.setParamsList(arrayOfStudentParams)
     navigate('/scores')
   }
 

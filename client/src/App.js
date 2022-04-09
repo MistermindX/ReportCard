@@ -6,6 +6,7 @@ import ScoresInput from './pages/ScoresInput'
 
 function App() {
   const [studentList, setStudentList] = useState([])
+  const [paramsList, setParamsList] = useState([])
   return (
     <div className="App">
       <main>
@@ -15,18 +16,15 @@ function App() {
             path="/"
             element={
               <StudentInput
-                studentList={studentList}
                 setStudentList={setStudentList}
+                setParamsList={setParamsList}
               />
             }
           />
           <Route
             path="/scores"
             element={
-              <ScoresInput
-                studentList={studentList}
-                setStudentList={setStudentList}
-              />
+              <ScoresInput studentList={studentList} paramsList={paramsList} />
             }
           />
         </Routes>
