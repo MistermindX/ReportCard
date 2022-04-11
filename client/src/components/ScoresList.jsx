@@ -411,10 +411,21 @@ function ScoresList(props) {
               </select>
               <br />
               Current Class:&nbsp;&nbsp;
-              <input id="currentClass" />
+              <select id="currentClass">
+                <option value="Pre-Algebra">Pre-Algebra</option>
+                <option value="Algebra">Algebra</option>
+                <option value="Geometry">Geometry</option>
+                <option value="Algebra II">Algebra II</option>
+              </select>
               <br />
               Setting:&nbsp;&nbsp;
-              <input id="setting" />
+              <select id="setting">
+                <option value="Pull Out Replacement">
+                  Pull Out Replacement
+                </option>
+                <option value="Inclusion">Inclusion</option>
+                <option value="General Education">General Education</option>
+              </select>
               <br />
               Year Grade:&nbsp;&nbsp;
               <input id="yearGrade" />
