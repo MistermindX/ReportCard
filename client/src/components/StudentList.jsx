@@ -115,7 +115,6 @@ function StudentList(props) {
         <textarea
           cols="50"
           rows="10"
-          className="enterStudents"
           name="listOfStudents"
           placeholder="Enter Students Here"
         />
