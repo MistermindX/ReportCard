@@ -399,6 +399,7 @@ function ScoresList(props) {
           {props.studentList.map((Student) => (
             <li key={Student.id}>
               {Student.firstName} {Student.lastName}
+              <br />
               Grade:
               <select id="grade">
                 <option value="9th">9th</option>
@@ -406,20 +407,30 @@ function ScoresList(props) {
                 <option value="11th">11th</option>
                 <option value="12th">12th</option>
               </select>
+              <br />
               Current Class: <input id="currentClass" />
+              <br />
               Setting: <input id="setting" />
+              <br />
               Year Grade: <input id="yearGrade" />
+              <br />
               Q1 Grade: <input id="q1" />
+              <br />
               Q2 Grade: <input id="q2" />
+              <br />
               Q3 Grade: <input id="q3" />
+              <br />
               Absent: <input id="absent" />
+              <br />
               Tardy: <input id="tardy" />
+              <br />
               Pronouns:
               <select id="pronouns">
                 <option value="m">He/Him</option>
                 <option value="f">She/Her</option>
                 <option value="t">They/Them</option>
               </select>
+              <br />
               Focus:
               <select id="focus">
                 <option value="0">0</option>
@@ -428,6 +439,7 @@ function ScoresList(props) {
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <br />
               Asks Questions:
               <select id="askQuestions">
                 <option value="0">0</option>
@@ -436,6 +448,7 @@ function ScoresList(props) {
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <br />
               Turn In Work:
               <select id="turnInWork">
                 <option value="0">0</option>
@@ -444,12 +457,14 @@ function ScoresList(props) {
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <br />
               Intelligence:
               <select id="intelligence">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
               </select>
+              <br />
               Distraction:
               <select id="distraction">
                 <option value="0">0</option>
@@ -457,6 +472,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Self Starter:
               <select id="selfStarter">
                 <option value="0">0</option>
@@ -464,6 +480,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Perseverence:
               <select id="perseverence">
                 <option value="0">0</option>
@@ -471,6 +488,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Best Mode Of Learning:
               <select id="bestModeOfLearning">
                 <option value="0">0</option>
@@ -478,6 +496,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Social Interactions:
               <select id="socialInteractions">
                 <option value="0">0</option>
@@ -485,6 +504,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Fluency With Technology:
               <select id="fluencyWithTechnology">
                 <option value="0">0</option>
@@ -492,6 +512,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Camera:
               <select id="focus">
                 <option value="0">0</option>
@@ -499,6 +520,7 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Responsiveness Online:
               <select id="responsivenessOnline">
                 <option value="0">0</option>
@@ -506,12 +528,14 @@ function ScoresList(props) {
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <br />
               Language:
               <select id="language">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
               </select>
+              <br />
               Placement:
               <select id="placement">
                 <option value="0">0</option>

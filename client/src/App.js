@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import StudentInput from './pages/StudentInput'
 import ScoresInput from './pages/ScoresInput'
 import ResultsPage from './pages/ResultsPage'
+import './styles/App.css'
 
 function App() {
   const [studentList, setStudentList] = useState([])
