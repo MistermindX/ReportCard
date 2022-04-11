@@ -113,6 +113,7 @@ function StudentList(props) {
       <h2>Insert List of Students</h2>
       <form onSubmit={makeStudentList}>
         <input name="listOfStudents" placeholder="Enter Students Here" />
+        &nbsp;&nbsp;
         <button type="Submit">Submit</button>
       </form>
     </div>
