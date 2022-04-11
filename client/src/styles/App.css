@@ -8,7 +8,7 @@ ul {
 li {
   float: left;
   display: block;
-  text-align: center;
+  text-align: left;
   padding: 16px;
   text-decoration: none;
 }
