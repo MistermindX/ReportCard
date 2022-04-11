@@ -555,8 +555,12 @@ function ScoresList(props) {
             </li>
           ))}
         </ul>
-        <button type="submit">Submit</button>
+        <button type="submit" className="scoresSubmit">
+          Submit
+        </button>
       </form>
+      <br />
+      <br />
     </div>
   )
 }

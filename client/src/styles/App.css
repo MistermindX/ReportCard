@@ -16,3 +16,10 @@ li {
 .studentName {
   text-align: center;
 }
+
+.scoresSubmit {
+  margin: 0;
+  position: absolute;
+  left: 50%; 
+  margin: 5px 0 20px 0;
+}
