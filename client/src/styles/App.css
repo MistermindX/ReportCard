@@ -27,3 +27,8 @@ li {
 body {
   background-color:honeydew;
 }
+
+.name {
+  text-align: center;
+  font-weight: bold;
+}

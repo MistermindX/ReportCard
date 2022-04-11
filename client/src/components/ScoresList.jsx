@@ -398,7 +398,9 @@ function ScoresList(props) {
         <ul>
           {props.studentList.map((Student) => (
             <li key={Student.id}>
-              {Student.firstName} {Student.lastName}
+              <p className="name">
+                {Student.firstName} {Student.lastName}
+              </p>
               <br />
               Grade:&nbsp;&nbsp;
               <select id="grade">
