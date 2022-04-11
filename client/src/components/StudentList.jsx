@@ -112,7 +112,13 @@ function StudentList(props) {
     <div class="studentName">
       <h2>Insert List of Students</h2>
       <form onSubmit={makeStudentList}>
-        <input name="listOfStudents" placeholder="Enter Students Here" />
+        <textarea
+          cols="50"
+          rows="10"
+          className="enterStudents"
+          name="listOfStudents"
+          placeholder="Enter Students Here"
+        />
         <br />
         <br />
         <button type="Submit">Submit</button>
