@@ -36,3 +36,15 @@ body {
 .instructions {
   text-align: center;
 }
+
+input{
+  width:25px;
+}
+
+select {
+  width: 40px;
+}
+
+#grade, #currentClass, #setting, #pronouns {
+  width:fit-content;
+}
