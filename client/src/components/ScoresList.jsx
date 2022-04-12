@@ -396,7 +396,7 @@ function ScoresList(props) {
     <div>
       <p className="instructions">
         <b>Instructions:</b> Input the information and scores for each student.
-        Click <b>Submit</b> to continue{' '}
+        Click <b>Submit</b> to continue.{' '}
       </p>
       <form onSubmit={handleSubmit}>
         <ul>
