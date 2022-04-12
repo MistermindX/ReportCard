@@ -111,6 +111,10 @@ function StudentList(props) {
   return (
     <div class="studentName">
       <h2>Insert List of Students</h2>
+      <p className="instructions">
+        <b>Instructions:</b> Put your list of students in with a comma and a
+        space between each one. Then click <b>Submit</b> to continue.{' '}
+      </p>
       <form onSubmit={makeStudentList}>
         <textarea
           cols="50"
