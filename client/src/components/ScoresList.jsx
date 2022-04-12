@@ -30,7 +30,7 @@ function ScoresList(props) {
 
     props.studentList[
       i
-    ].result = `${props.studentList[i].firstName} ${props.studentList[i].lastName} is completing the ${props.paramsList[i].grade} Grade. ${HeSheThey}’s currently taking ${props.paramsList[i].currentClass} in a ${props.paramsList[i].setting} setting. Thus far, ${props.studentList[i].firstName} has a ${props.paramsList[i].yearGrade} average for the year, with a ${props.paramsList[i].q1} in the 1st quarter, a ${props.paramsList[i].q2} in the 2nd quarter, and a ${props.paramsList[i].q3} + in the 3rd quarter. ${HeSheThey} has been marked absent ${props.paramsList[i].absent} times this year, and been marked tardy ${props.paramsList[i].tardy} times this year through 3 marking periods. `
+    ].result = `${props.studentList[i].firstName} ${props.studentList[i].lastName} is completing the ${props.paramsList[i].grade} Grade. ${HeSheThey}’s currently taking ${props.paramsList[i].currentClass} in a ${props.paramsList[i].setting} setting. Thus far, ${props.studentList[i].firstName} has a ${props.paramsList[i].yearGrade} average for the year, with a ${props.paramsList[i].q1} in the 1st quarter, a ${props.paramsList[i].q2} in the 2nd quarter, and a ${props.paramsList[i].q3} in the 3rd quarter. ${HeSheThey} has been marked absent ${props.paramsList[i].absent} times this year, and been marked tardy ${props.paramsList[i].tardy} times this year through 3 marking periods. `
 
     let top = props.studentList[i].firstName
     switch (props.paramsList[i].focus) {
@@ -62,24 +62,24 @@ function ScoresList(props) {
       : (top = props.studentList[i].firstName)
     switch (props.paramsList[i].askQuestions) {
       case '1':
-        props.studentList[i].result =
-          props.studentList[i].result +
-          `${top} very rarely asks questions when ${heshethey} do not understand something. `
+        props.studentList[
+          i
+        ].result += `${top} very rarely asks questions when ${heshethey} do not understand something. `
         break
       case '2':
-        props.studentList[i].result =
-          props.studentList[i].result +
-          `${top} needs to be checked in on regularly, but will ask questions when solicited. `
+        props.studentList[
+          i
+        ].result += `${top} needs to be checked in on regularly, but will ask questions when solicited. `
         break
       case '3':
-        props.studentList[i].result =
-          props.studentList[i].result +
-          `${top} will sometimes ask questions when necessary, but not always. `
+        props.studentList[
+          i
+        ].result += `${top} will sometimes ask questions when necessary, but not always. `
         break
       case '4':
-        props.studentList[i].result =
-          props.studentList[i].result +
-          `${top} asks great questions that also benefit others in class. `
+        props.studentList[
+          i
+        ].result += `${top} asks great questions that also benefit others in class. `
         break
       default:
         break
