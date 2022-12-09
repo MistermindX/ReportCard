@@ -104,6 +104,8 @@ function StudentList(props) {
         0,
         0,
         0,
+        0,
+        0,
         0
       )
     }
