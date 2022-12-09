@@ -20,19 +20,21 @@ function StudentList(props) {
     q3,
     absent,
     tardy,
-    pronouns,
-    focus,
-    askQuestions,
-    turnInWork,
+    gender,
+    punctuality,
     intelligence,
-    distraction,
+    focus,
     selfStarter,
     perseverence,
+    askQuestions,
+    distraction,
+    handingInWork,
     bestModeOfLearning,
     socialInteractions,
-    fluencyWithTechnology,
-    camera,
-    responsivenessOnline,
+    technologyLiteracy,
+    onlineLearning,
+    onlineResponsiveness,
+    cameraMicrophone,
     language,
     placement
   ) {
@@ -45,19 +47,21 @@ function StudentList(props) {
     this.q3 = q3
     this.absent = absent
     this.tardy = tardy
-    this.pronouns = pronouns
-    this.focus = focus
-    this.askQuestions = askQuestions
-    this.turnInWork = turnInWork
+    this.gender = gender
+    this.punctuality = punctuality
     this.intelligence = intelligence
-    this.distraction = distraction
+    this.focus = focus
     this.selfStarter = selfStarter
     this.perseverence = perseverence
+    this.askQuestions = askQuestions
+    this.distraction = distraction
+    this.handingInWork = handingInWork
     this.bestModeOfLearning = bestModeOfLearning
     this.socialInteractions = socialInteractions
-    this.fluencyWithTechnology = fluencyWithTechnology
-    this.camera = camera
-    this.responsivenessOnline = responsivenessOnline
+    this.technologyLiteracy = technologyLiteracy
+    this.onlineLearning = onlineLearning
+    this.onlineResponsiveness = onlineResponsiveness
+    this.cameraMicrophone = cameraMicrophone
     this.language = language
     this.placement = placement
   }
