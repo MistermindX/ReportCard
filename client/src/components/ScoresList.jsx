@@ -417,9 +417,17 @@ function ScoresList(props) {
               Current Class:&nbsp;&nbsp;
               <select id="currentClass">
                 <option value="Pre-Algebra">Pre-Algebra</option>
-                <option value="Algebra">Algebra</option>
+                <option value="Algebra I">Algebra I</option>
                 <option value="Geometry">Geometry</option>
                 <option value="Algebra II">Algebra II</option>
+                <option value="Precalculus">Precalculus</option>
+                <option value="Calculus">Calculus</option>
+                <option value="Introduction to College Algebra">
+                  Introduction to College Algebra
+                </option>
+                <option value="Trigonometry & Elementary Functions">
+                  Trigonometry & Elementary Functions
+                </option>
               </select>
               <br />
               Setting:&nbsp;&nbsp;
@@ -429,6 +437,7 @@ function ScoresList(props) {
                 </option>
                 <option value="Inclusion">Inclusion</option>
                 <option value="General Education">General Education</option>
+                <option value="Honors">Honors</option>
               </select>
               <br />
               Year Grade:&nbsp;&nbsp;
@@ -449,125 +458,349 @@ function ScoresList(props) {
               Tardy:&nbsp;&nbsp;
               <input id="tardy" />
               <br />
-              Pronouns:&nbsp;&nbsp;
-              <select id="pronouns">
-                <option value="m">He/Him</option>
-                <option value="f">She/Her</option>
-                <option value="t">They/Them</option>
+              Gender:&nbsp;&nbsp;
+              <select id="gender">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+                <option value="o">Other</option>
               </select>
               <br />
-              Focus:&nbsp;&nbsp;
-              <select id="focus">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-              <br />
-              Asks Questions:&nbsp;&nbsp;
-              <select id="askQuestions">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-              <br />
-              Turn In Work:&nbsp;&nbsp;
-              <select id="turnInWork">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+              Punctuality:&nbsp;&nbsp;
+              <select id="punctuality">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student is late to class on a regular basis.
+                </option>
+                <option value="2">
+                  2 - Student is occasionally late to class.
+                </option>
+                <option value="3">
+                  3 - Student is usually on time to class.
+                </option>
+                <option value="4">
+                  4 - Student is always on time to class, barring unforeseen
+                  circumstances.
+                </option>
               </select>
               <br />
               Intelligence:&nbsp;&nbsp;
               <select id="intelligence">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student is very intelligent, and capable of doing the work
+                  when properly motivated and focused.
+                </option>
+                <option value="2">
+                  2 - Student is very intelligent, and should be encouraged to
+                  work on problems themselves before asking for help.{' '}
+                </option>
+                <option value="3">
+                  3 - Student is very intelligent, and should be given extra
+                  work to keep them occupied and challenged.
+                </option>
+                <option value="4">
+                  4 - Student is very intelligent, and should be encouraged to
+                  help others during class.
+                </option>
               </select>
               <br />
-              Distraction:&nbsp;&nbsp;
-              <select id="distraction">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+              Focus:&nbsp;&nbsp;
+              <select id="focus">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student requires help from a paraprofessional to keep them
+                  focused throughout class.
+                </option>
+                <option value="2">
+                  2 - Student is able to focus with redirection throughout
+                  class.
+                </option>
+                <option value="3">
+                  3 - Student only requires occasional redirection throughout
+                  class to remain focused.
+                </option>
+                <option value="4">
+                  4 - Student always remains focused throughout class without
+                  any redirection.
+                </option>
               </select>
               <br />
               Self Starter:&nbsp;&nbsp;
               <select id="selfStarter">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student requires assistance starting work before they are
+                  able to complete it themselves.
+                </option>
+                <option value="2">
+                  2 - Student will usually need help getting started on work in
+                  class before they can complete it themselves.
+                </option>
+                <option value="3">
+                  3 - Student will sometimes need help getting started on work
+                  before being able to complete it themselves, but not always.
+                </option>
+                <option value="4">
+                  4 - Student has the ability to get started on work in class
+                  without much assistance.
+                </option>
               </select>
               <br />
               Perseverence:&nbsp;&nbsp;
               <select id="perseverence">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student will stop working if and when they don’t know how
+                  to continue a problem.
+                </option>
+                <option value="2">
+                  2 - Student often has issues persevering to solve problems in
+                  class.
+                </option>
+                <option value="3">
+                  3 - Student will occasionally require help when they get stuck
+                  while solving a problem.
+                </option>
+                <option value="4">
+                  4 - Student has the ability to persevere through issues
+                  solving problems to complete them.
+                </option>
+              </select>
+              <br />
+              Asks Questions:&nbsp;&nbsp;
+              <select id="askQuestions">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student very rarely asks questions when they do not
+                  understand something in class, so their understanding needs to
+                  be gauged regularly.
+                </option>
+                <option value="2">
+                  2 - Student will only ask questions when solicited, so their
+                  understanding needs to be gauged regularly.
+                </option>
+                <option value="3">
+                  3 - Student will usually ask questions when necessary, but not
+                  always.
+                </option>
+                <option value="4">
+                  4 - Student asks great questions that also benefit others in
+                  class.
+                </option>
+              </select>
+              <br />
+              Distraction:&nbsp;&nbsp;
+              <select id="distraction">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student has a habit of distracting others in class when
+                  not properly occupied.
+                </option>
+                <option value="2">
+                  2 - Student will occasionally distract others in class if not
+                  properly occupied.
+                </option>
+                <option value="3">
+                  3 - Student when paired with certain peers, can be a
+                  distraction to others.
+                </option>
+                <option value="4">
+                  4 - Student will rarely, if ever, distract others in class.
+                </option>
+              </select>
+              <br />
+              Handing in Work:&nbsp;&nbsp;
+              <select id="handingInWork">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student regularly hands in assignments after the due date.
+                </option>
+                <option value="2">
+                  2 - Student will usually need to be reminded to hand their
+                  assignments in on time.
+                </option>
+                <option value="3">
+                  3 - Student will occasionally turn in assignments after
+                  they're due, but for the most part hands work in on time.
+                </option>
+                <option value="4">
+                  4 - Student always turns in their assignments on time.
+                </option>
               </select>
               <br />
               Best Mode Of Learning:&nbsp;&nbsp;
               <select id="bestModeOfLearning">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student learns best when they have a teacher or
+                  paraprofessional to sit with them while they work to provide
+                  guidance and redirection.
+                </option>
+                <option value="2">
+                  2 - Student learns best by having a problem modeled for them
+                  before attempting themselves.
+                </option>
+                <option value="3">
+                  3 - Student learns best by working in a group with others to
+                  work out solutions.
+                </option>
+                <option value="4">
+                  4 - Student learns best by trying a problem themselves,
+                  learning from their mistakes, and asking questions about the
+                  problem afterwards.
+                </option>
               </select>
               <br />
               Social Interactions:&nbsp;&nbsp;
               <select id="socialInteractions">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student has a difficult time interacting with others in
+                  class in a healthy and appropriate way.
+                </option>
+                <option value="2">
+                  2 - Student's social interactions with others can vary and are
+                  something they need to have monitored.
+                </option>
+                <option value="3">
+                  3 - For the most part, student has healthy social interactions
+                  with others in the classroom.
+                </option>
+                <option value="4">
+                  4 - Student has normal, appropriate social interactions with
+                  their peers and staff in the classroom.
+                </option>
               </select>
               <br />
-              Fluency With Technology:&nbsp;&nbsp;
-              <select id="fluencyWithTechnology">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+              Technology Literacy:&nbsp;&nbsp;
+              <select id="technologyLiteracy">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student generally has a difficult time using technology in
+                  class and usually requires help in this area.
+                </option>
+                <option value="2">
+                  2 - Student has the ability to learn new computer skills, but
+                  does require help occasionally.
+                </option>
+                <option value="3">
+                  3 - Student has a solid grasp of technology and can learn
+                  computer skills quickly.
+                </option>
+                <option value="4">
+                  4 - Student has a strong grasp of technology, learns new
+                  skills quickly, and has the ability to assist others in this
+                  area.
+                </option>
               </select>
               <br />
-              Camera:&nbsp;&nbsp;
-              <select id="focus">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+              Online Learning:&nbsp;&nbsp;
+              <select id="onlineLearning">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student is regularly late or absent during remote
+                  instruction.
+                </option>
+                <option value="2">
+                  2 - Student has a difficult time logging in for class on Zoom
+                  regularly during remote instruction.
+                </option>
+                <option value="3">
+                  3 - Student will sometimes log in for class on Zoom when
+                  necessary during remote instruction, but not always.
+                </option>
+                <option value="4">
+                  4 - Student will log in to Zoom on time during remote
+                  instruction.
+                </option>
               </select>
               <br />
-              Responsiveness Online:&nbsp;&nbsp;
-              <select id="responsivenessOnline">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+              Online Responsiveness:&nbsp;&nbsp;
+              <select id="onlineResponsiveness">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student is usually unresponsive during remote instruction.
+                </option>
+                <option value="2">
+                  2 - Student is sometimes unresponsive during remote
+                  instruction.
+                </option>
+                <option value="3">
+                  3 - Student is usually responsive during remote instruction.
+                </option>
+                <option value="4">
+                  4 - Student is always responsive during remote instruction.
+                </option>
+              </select>
+              <br />
+              Camera/Microphone:&nbsp;&nbsp;
+              <select id="cameraMicrophone">
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student rarely, if ever, turns on their camera and
+                  microphone during remote instruction.
+                </option>
+                <option value="2">
+                  2 - Student will only turn on their camera or microphone when
+                  specifically asked to do so.
+                </option>
+                <option value="3">
+                  3 - Students will usually have their camera and microphone on
+                  during remote instruction when appropriate.
+                </option>
+                <option value="4">
+                  4 - Student will always have their camera and microphone on
+                  during remote instruction when appropriate.
+                </option>
               </select>
               <br />
               Language:&nbsp;&nbsp;
               <select id="language">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - Student has a difficult time understanding content being
+                  delivered in English during class.
+                </option>
+                <option value="2">
+                  2 - Student will occasionally have misunderstandings in class
+                  while learning in English.
+                </option>
+                <option value="3">
+                  3 - Student does very well in class even while learning in
+                  English.{' '}
+                </option>
+                <option value="4">
+                  4 - Student has no issue learning content in English.
+                </option>
               </select>
               <br />
               Placement:&nbsp;&nbsp;
               <select id="placement">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="0">0 - Skip Prompt</option>
+                <option value="1">
+                  1 - I believe student would be appropriately placed in a Pull
+                  Out Replacement setting.
+                </option>
+                <option value="2">
+                  2 - I believe student could be appropriately placed in an
+                  Inclusion setting or a Pull Out Replacement setting.
+                </option>
+                <option value="3">
+                  3 - I believe student would be appropriately placed in an
+                  Inclusion setting if not for the fact they are continuing to
+                  learn English. Given that, I believe they are appropriately
+                  placed in a Pull Out Replacement setting.
+                </option>
+                <option value="4">
+                  4 - I believe student would be appropriately placed in an
+                  Inclusion setting if not for their social skills. Given that,
+                  I believe they are appropriately placed in a Pull Out
+                  Replacement setting.
+                </option>
+                <option value="5">
+                  5 - I believe student would be appropriately placed in an
+                  Inclusion setting.
+                </option>
               </select>
             </li>
           ))}
