@@ -535,6 +535,7 @@ function ScoresList(props) {
               <br />
               Grade:&nbsp;&nbsp;
               <select id="grade">
+                <option></option>
                 <option value="9th">9th</option>
                 <option value="10th">10th</option>
                 <option value="11th">11th</option>
@@ -560,6 +561,7 @@ function ScoresList(props) {
               <br />
               Setting:&nbsp;&nbsp;
               <select id="setting">
+                <option></option>
                 <option value="Pull Out Replacement">
                   Pull Out Replacement
                 </option>
@@ -588,6 +590,7 @@ function ScoresList(props) {
               <br />
               Gender:&nbsp;&nbsp;
               <select id="gender">
+                <option></option>
                 <option value="m">Male</option>
                 <option value="f">Female</option>
                 <option value="o">Other</option>
