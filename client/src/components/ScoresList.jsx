@@ -9,7 +9,7 @@ function ScoresList(props) {
     let himherthem = 'them'
     let hishertheir = 'their'
     let himselfherselftheirself = 'theirself'
-    switch (props.paramsList[i].pronouns) {
+    switch (props.paramsList[i].gender) {
       case 'm':
         heshethey = 'he'
         HeSheThey = 'He'
@@ -30,9 +30,66 @@ function ScoresList(props) {
 
     props.studentList[
       i
-    ].result = `${props.studentList[i].firstName} ${props.studentList[i].lastName} is completing the ${props.paramsList[i].grade} Grade. ${HeSheThey}’s currently taking ${props.paramsList[i].currentClass} in a ${props.paramsList[i].setting} setting. Thus far, ${props.studentList[i].firstName} has a ${props.paramsList[i].yearGrade} average for the year, with a ${props.paramsList[i].q1} in the 1st quarter, a ${props.paramsList[i].q2} in the 2nd quarter, and a ${props.paramsList[i].q3} in the 3rd quarter. ${HeSheThey} has been marked absent ${props.paramsList[i].absent} times this year, and been marked tardy ${props.paramsList[i].tardy} times this year through 3 marking periods. `
+    ].result = `${props.studentList[i].firstName} ${props.studentList[i].lastName} is completing the ${props.paramsList[i].grade} Grade. ${HeSheThey}'s currently taking ${props.paramsList[i].currentClass} in a ${props.paramsList[i].setting} setting. Thus far, ${props.studentList[i].firstName} has a ${props.paramsList[i].yearGrade} average for the year, with a ${props.paramsList[i].q1} in the 1st quarter, a ${props.paramsList[i].q2} in the 2nd quarter, and a ${props.paramsList[i].q3} in the 3rd quarter. ${HeSheThey} has been marked absent ${props.paramsList[i].absent} times this year, and been marked tardy ${props.paramsList[i].tardy} times this year through 3 marking periods. `
 
     let top = props.studentList[i].firstName
+
+    switch (props.paramsList[i].punctuality) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} is late to class on a regular basis. `
+        break
+      case '2':
+        props.studentList[i].result += `${top} is occasionally late to class. `
+        break
+      case '3':
+        props.studentList[i].result += `${top} is usually on time to class. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} is always on time to class, barring unforeseen circumstances. `
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].punctuality > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
+    switch (props.paramsList[i].intelligence) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} is very intelligent, and capable of doing the work when properly motivated and focused. `
+        break
+      case '2':
+        props.studentList[
+          i
+        ].result += `${top} is very intelligent, and should be encouraged to work on problems ${himselfherselftheirself} before asking for help. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} is very intelligent, and should be given extra work to keep ${himherthem} occupied and challenged. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} is very intelligent, and should be encouraged to help others during class. `
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].intelligence > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
     switch (props.paramsList[i].focus) {
       case '1':
         props.studentList[
@@ -57,109 +114,8 @@ function ScoresList(props) {
       default:
         break
     }
+
     props.paramsList[i].focus > 0 && top === props.studentList[i].firstName
-      ? (top = HeSheThey)
-      : (top = props.studentList[i].firstName)
-    switch (props.paramsList[i].askQuestions) {
-      case '1':
-        props.studentList[
-          i
-        ].result += `${top} very rarely asks questions when ${heshethey} do not understand something. `
-        break
-      case '2':
-        props.studentList[
-          i
-        ].result += `${top} needs to be checked in on regularly, but will ask questions when solicited. `
-        break
-      case '3':
-        props.studentList[
-          i
-        ].result += `${top} will sometimes ask questions when necessary, but not always. `
-        break
-      case '4':
-        props.studentList[
-          i
-        ].result += `${top} asks great questions that also benefit others in class. `
-        break
-      default:
-        break
-    }
-
-    props.paramsList[i].askQuestions > 0 &&
-    top === props.studentList[i].firstName
-      ? (top = HeSheThey)
-      : (top = props.studentList[i].firstName)
-    switch (props.paramsList[i].turnInWork) {
-      case '1':
-        props.studentList[
-          i
-        ].result += `${top} has a hard time handing in work on time. `
-        break
-      case '2':
-        props.studentList[
-          i
-        ].result += `${top} will usually need to be reminded to hand ${hishertheir} work in on time. `
-        break
-      case '3':
-        props.studentList[
-          i
-        ].result += `${top} will occasionally turn work in late, but for the most part is punctual handing in work. `
-        break
-      case '4':
-        props.studentList[
-          i
-        ].result += `${top} always turns ${hishertheir} work in promptly. `
-        break
-      default:
-        break
-    }
-
-    props.paramsList[i].turnInWork > 0 && top === props.studentList[i].firstName
-      ? (top = HeSheThey)
-      : (top = props.studentList[i].firstName)
-
-    switch (props.paramsList[i].intelligence) {
-      case '1':
-        props.studentList[
-          i
-        ].result += `${top} is very intelligent. I will usually encourage them to work on things themselves before asking for help. `
-        break
-      case '2':
-        props.studentList[
-          i
-        ].result += `${top} is very intelligent, and capable of doing the work when properly motivated. `
-        break
-      default:
-        break
-    }
-
-    props.paramsList[i].intelligence > 0 &&
-    top === props.studentList[i].firstName
-      ? (top = HeSheThey)
-      : (top = props.studentList[i].firstName)
-
-    switch (props.paramsList[i].distraction) {
-      case '1':
-        props.studentList[
-          i
-        ].result += `${top} will occasionally distract others in class if not properly occupied. `
-        break
-      case '2':
-        props.studentList[
-          i
-        ].result += `${top} when paired with certain peers, can be a distraction to others. `
-        break
-      case '3':
-        props.studentList[
-          i
-        ].result += `${top} rarely, if ever distracts others in class. `
-        break
-      default:
-        break
-    }
-
-    props.paramsList[i].distraction > 0 &&
-    top === props.studentList[i].firstName
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
 
@@ -167,14 +123,19 @@ function ScoresList(props) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} will often need help getting start on work in class. `
+        ].result += `${top} requires assistance starting work before ${heshethey} is able to complete it ${himselfherselftheirself}. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} will sometimes need help getting started on work before being able to complete it ${himselfherselftheirself}. `
+        ].result += `${top} will usually need help getting started on work in class before ${heshethey} can complete it ${himselfherselftheirself}. `
         break
       case '3':
+        props.studentList[
+          i
+        ].result += `${top} will sometimes need help getting started on work before being able to complete it ${himselfherselftheirself}, but not always. `
+        break
+      case '4':
         props.studentList[
           i
         ].result += `${top} has the ability to get started on work in class without much assistance. `
@@ -192,17 +153,22 @@ function ScoresList(props) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} has the ability to persevere through issues solving problems to complete them. `
+        ].result += `${top} will stop working if and when ${heshethey} doesn't know how to continue a problem. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} will sometimes require help when they hit a wall solving a problem. `
+        ].result += `${top} often has issues persevering to solve problems in class. `
         break
       case '3':
         props.studentList[
           i
-        ].result += `${top} often has issues persevering to solve problems in class. `
+        ].result += `${top} will occasionally require help when ${heshethey} gets stuck while solving a problem. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} has the ability to persevere through issues solving problems to complete them. `
         break
       default:
         break
@@ -213,18 +179,113 @@ function ScoresList(props) {
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
 
-    switch (props.paramsList[i].bestModeOfLearning) {
+    switch (props.paramsList[i].askQuestions) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} learns best by having a problem modeled for ${himherthem} before attempting it ${himselfherselftheirself}. '`
+        ].result += `${top} very rarely asks questions when they ${heshethey} does not understand something in class, so ${hishertheir} understanding needs to be gauged regularly. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} learns best by working in a group with others to work out solutions. `
+        ].result += `${top} will only ask questions when solicited, so ${hishertheir} understanding needs to be gauged regularly. `
         break
       case '3':
+        props.studentList[
+          i
+        ].result += `${top} will usually ask questions when necessary, but not always. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} asks great questions that also benefit others in class. `
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].askQuestions > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
+    switch (props.paramsList[i].distraction) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} has a habit of distracting others in class when not properly occupied. `
+        break
+      case '2':
+        props.studentList[
+          i
+        ].result += `${top} will occasionally distract others in class if not properly occupied. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} when paired with certain peers, can be a distraction to others. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} will rarely, if ever, distract others in class. `
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].distraction > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
+    switch (props.paramsList[i].handingInWork) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} regularly hands in assignments after the due date. `
+        break
+      case '2':
+        props.studentList[
+          i
+        ].result += `${top} will usually need to be reminded to hand ${hishertheir} assignments in on time. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} will occasionally turn in assignments after they're due, but for the most part hands work in on time. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} always turns in ${hishertheir} assignments on time. `
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].handingInWork > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
+    switch (props.paramsList[i].bestModeOfLearning) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} learns best when ${heshethey} has a teacher or paraprofessional to sit with ${himherthem} while they work to provide guidance and redirection. `
+        break
+      case '2':
+        props.studentList[
+          i
+        ].result += `${top} learns best by having a problem modeled for ${himherthem} before attempting it ${himselfherselftheirself}. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} learns best by working in a group with others to work out solutions. `
+        break
+      case '4':
         props.studentList[
           i
         ].result += `${top} learns best by trying a problem ${himselfherselftheirself}, learning from ${hishertheir} mistakes, and asking questions about the problem afterwards. `
@@ -242,14 +303,19 @@ function ScoresList(props) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} social interactions with others can vary and it is something ${heshethey} needs to have monitored and work on. `
+        ].result += `${top} has a difficult time interacting with others in class in a healthy and appropriate way. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `For the most part, ${top} has healthy social interactions with others in the room. `
+        ].result += `${props.studentList[i].firstName}'s social interactions with others can vary and are something they need to have monitored. `
         break
       case '3':
+        props.studentList[
+          i
+        ].result += `For the most part, ${props.studentList[i].firstName} has healthy social interactions with others in the classroom. `
+        break
+      case '4':
         props.studentList[
           i
         ].result += `${top} has normal, appropriate social interactions with ${hishertheir} peers and staff in the classroom. `
@@ -263,76 +329,122 @@ function ScoresList(props) {
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
 
-    switch (props.paramsList[i].fluencyWithTechnology) {
+    switch (props.paramsList[i].technologyLiteracy) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} generally has a hard time using technology in class and usually requires help in this area. `
+        ].result += `${top} generally has a difficult time using technology in class and usually requires help in this area. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} is alright when it comes to learning new computer skills, but does require help occasionally. `
+        ].result += `${top} has the ability to learn new computer skills, but does require help occasionally. `
         break
       case '3':
         props.studentList[
           i
-        ].result += `${top} has a strong grasp of technology, learns computer skills quickly, and is able to assist others with their technology issues. `
+        ].result += `${top} has a solid grasp of technology and can learn computer skills quickly. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} has a strong grasp of technology, learns new skills quickly, and has the ability to assist others in this area. `
         break
       default:
         break
     }
 
-    props.paramsList[i].fluencyWithTechnology > 0 &&
+    props.paramsList[i].technologyLiteracy > 0 &&
     top === props.studentList[i].firstName
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
 
-    switch (props.paramsList[i].camera) {
+    switch (props.paramsList[i].onlineLearning) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} rarely has ${hishertheir} camera on during hybrid instruction. `
+        ].result += `${top} is regularly late or absent during remote instruction. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} sometimes has ${hishertheir} camera on during hybrid instruction. `
+        ].result += `${top} has a difficult time logging in for class on Zoom regularly during remote instruction. `
         break
       case '3':
         props.studentList[
           i
-        ].result += `${top}  ' always has ${hishertheir} camera on during hybrid instruction. '`
+        ].result += `${top} will sometimes log in for class on Zoom when necessary during remote instruction, but not always. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} will log in to Zoom on time during remote instruction `
         break
       default:
         break
     }
 
-    props.paramsList[i].camera > 0 && top === props.studentList[i].firstName
+    props.paramsList[i].onlineLearning > 0 &&
+    top === props.studentList[i].firstName
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
 
-    switch (props.paramsList[i].responsivenessOnline) {
+    switch (props.paramsList[i].onlineResponsiveness) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} will sometimes be unresponsive during hybrid instruction. `
+        ].result += `${top} is usually unresponsive during remote instruction. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} is usually available and responsive online when called upon during hybrid instruction. `
+        ].result += `${top} is sometimes unresponsive during remote instruction. `
         break
       case '3':
         props.studentList[
           i
-        ].result += `${top} is always available and responsive online when called upon during hybrid instruction. `
+        ].result += `${top} is usually responsive during remote instruction. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} is always responsive during remote instruction. `
         break
       default:
         break
     }
 
-    props.paramsList[i].responsivenessOnline > 0 &&
+    props.paramsList[i].onlineResponsiveness > 0 &&
+    top === props.studentList[i].firstName
+      ? (top = HeSheThey)
+      : (top = props.studentList[i].firstName)
+
+    switch (props.paramsList[i].cameraMicrophone) {
+      case '1':
+        props.studentList[
+          i
+        ].result += `${top} rarely, if ever, turns on ${hishertheir} camera and microphone during remote instruction. `
+        break
+      case '2':
+        props.studentList[
+          i
+        ].result += `${top} will only turn on ${hishertheir} camera or microphone when specifically asked to do so. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} will usually have ${hishertheir} camera and microphone on during remote instruction when appropriate. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} will always have ${hishertheir} camera and microphone on during remote instruction when appropriate.`
+        break
+      default:
+        break
+    }
+
+    props.paramsList[i].cameraMicrophone > 0 &&
     top === props.studentList[i].firstName
       ? (top = HeSheThey)
       : (top = props.studentList[i].firstName)
@@ -341,12 +453,22 @@ function ScoresList(props) {
       case '1':
         props.studentList[
           i
-        ].result += `${top} will occasionally have misunderstandings in class while still learning English. `
+        ].result += `${top} has a difficult time understanding content being delivered in English during class. `
         break
       case '2':
         props.studentList[
           i
-        ].result += `${top} does very well in class even while continuing to learn English. `
+        ].result += `${top} will occasionally have misunderstandings in class while learning in English. `
+        break
+      case '3':
+        props.studentList[
+          i
+        ].result += `${top} does very well in class even while learning in English. `
+        break
+      case '4':
+        props.studentList[
+          i
+        ].result += `${top} has no issue learning content in English. `
         break
       default:
         break
@@ -356,22 +478,27 @@ function ScoresList(props) {
       case '1':
         props.studentList[
           i
-        ].result += `I believe ${props.studentList[i].firstName} is appropriately placed in a Pull Out Replacement setting.`
+        ].result += `I believe ${props.studentList[i].firstName} would be appropriately placed in a Pull Out Replacement setting.`
         break
       case '2':
         props.studentList[
           i
-        ].result += `I believe that ${props.studentList[i].firstName} would be able to thrive in an Inclusion setting as well as in a Pull Out Replacement setting.'`
+        ].result += `I believe ${props.studentList[i].firstName} could be appropriately placed in an Inclusion setting or a Pull Out Replacement setting.`
         break
       case '3':
         props.studentList[
           i
-        ].result += `${props.studentList[i].firstName} is an english learner, and if not for that, I would recommend she be placed in an Inclusion setting.`
+        ].result += `I believe ${props.studentList[i].firstName} would be appropriately placed in an Inclusion setting if not for the fact they are continuing to learn English. Given that, I believe they are appropriately placed in a Pull Out Replacement setting.`
         break
       case '4':
         props.studentList[
           i
-        ].result += `While ${props.studentList[i].firstName} could probably do the work in an Inclusion setting, due to ${hishertheir} need for redirection and individual attention, I believe ${heshethey} is appropriately placed in a Pull Out Replacement setting.`
+        ].result += `I believe ${props.studentList[i].firstName} would be appropriately placed in an Inclusion setting if not for their social skills. Given that, I believe they are appropriately placed in a Pull Out Replacement setting.`
+        break
+      case '5':
+        props.studentList[
+          i
+        ].result += `I believe ${props.studentList[i].firstName} would be appropriately placed in an Inclusion setting.`
         break
       default:
         break
