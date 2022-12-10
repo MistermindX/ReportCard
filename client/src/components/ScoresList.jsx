@@ -543,6 +543,7 @@ function ScoresList(props) {
               <br />
               Current Class:&nbsp;&nbsp;
               <select id="currentClass">
+                <option></option>
                 <option value="Pre-Algebra">Pre-Algebra</option>
                 <option value="Algebra I">Algebra I</option>
                 <option value="Geometry">Geometry</option>
