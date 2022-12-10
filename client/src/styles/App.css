@@ -45,6 +45,10 @@ select {
   width: 40px;
 }
 
-#grade, #currentClass, #setting, #gender {
-  width:80px;
+#grade, #setting, #gender {
+  width:fit-content;
+}
+
+#currentClass {
+  width:100px;
 }
